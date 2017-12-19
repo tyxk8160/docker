@@ -33,3 +33,12 @@ docker ps -a
 ```
 docker commit TAG baseos
 ```
+## 进入容器
+attach命令
+```
+docker attach <TAG|NAME|ID>
+```
+exec命令
+```
+docker exec -ti ID /bin/sh
+```

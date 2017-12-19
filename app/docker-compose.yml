@@ -1,0 +1,41 @@
+
+
+version: '2.0'
+services:
+  nginx:
+    build: ./nginx
+    ports:
+     - 80:80
+    restart: always
+    links:
+    - app1
+    - app2
+    
+    
+
+  app1:
+    build: ./flask
+    restart: always
+    volumes:
+    - ./src:/app
+    links:
+    - db
+
+    command: python /app/hello.py
+  
+  app2:
+    build: ./flask
+    restart: always
+    volumes:
+    - ./src:/app
+    links:
+    - db
+    command: python /app/hello.py
+    
+    
+
+  db:
+    image: redis:4.0-alpine   
+    restart: always
+
+  
