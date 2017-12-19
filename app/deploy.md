@@ -11,11 +11,13 @@ docker部署分两种
 <img src="pic/deploy.PNG">
 整体部署框架如上图所示，底层是OS和kernel，docker服务和源码文件运行在OS上。docker上创建了四个容器，分别是redis、app1、app2、nginx。源码挂载到docker中的app1和app2中相应的文件夹下。这四个基础的小容器和以从官网下载或者由Dockerfile创建。之后通过
 docker-compose.yml管理多个容器。启动时只需运行：
-```sh
+```
 docker-compose up
 ```
-```docker
-# filename:docker-compose.yml
+
+docker-compose.yml
+```
+# filename:
 version: '2.0'
 services:
   nginx:
@@ -26,9 +28,6 @@ services:
     links:
     - app1
     - app2
-    
-    
-
   app1:
     build: ./flask
     restart: always
