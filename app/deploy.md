@@ -1,7 +1,7 @@
 # Docker部署方案
 ## 需求
 假设我们需要部署一个web应用：web框架采用flask,数据库选用redis,nginx作为负载分担和反向代理。组织架构图如下。
-<img src="pic/tmp1.png">
+<img src="pic/tmp1.PNG">
 ## 部署
 docker部署分两种
 * 采用集装箱式部署：将所有的依赖环境和源码构成一个单独的容器
